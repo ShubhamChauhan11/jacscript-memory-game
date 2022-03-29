@@ -1,6 +1,7 @@
 const arr= [1,2,3,4,5,6,7,8,9];
 const divcontainer= document.getElementById("game-container")
 const inputcontainer= document.getElementById("input-container");
+const inputfields= document.querySelectorAll("input");
 const strtbtn= document.getElementById("start-game");
 const submitbtn= document.getElementById("submit")
 const startagainbtn= document.getElementById("start-again")
@@ -34,7 +35,7 @@ function startgame(){
           startagainbtn.style.display="block"
           
 
-     },2000)
+     },3000)
 }
 const resulee= document.getElementById("result")
 console.log(arr2);
@@ -72,7 +73,19 @@ function restart(){
     divcontainer.style.display= "grid";
     inputcontainer.style.display= "none";
     startagainbtn.style.display= "none"
-    startgame()
+    
+    resulee.style.display="none"
+    inputfields.forEach((ele)=>{
+         ele.value="";
+    })
+    startgame();
+    submitbtn.addEventListener("onclick", submit);
+    
+    
+
+   
+    
+    
 
 }     
 
